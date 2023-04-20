@@ -1,0 +1,37 @@
+﻿@using MvcStock.Models.Entity
+@model List<TBLMUSTERILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+<a href="/MUSTERI/YeniMusteri/" class="btn btn-primary btn-sm" style="margin-bottom: 10px; border-radius: 8px; float:right;">Yeni Ekle</a>
+<h4 style="padding-bottom:1rem"><strong>Müşteriler</strong></h4>
+<table class="table table-bordered">
+    <tr>
+        <th>Müşteri Id</th>
+        <th>Müşteri Adı</th>
+        <th>Müşteri Soyadı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>ALERT</th>
+    </tr>
+    <tbody>
+        @foreach (var mus in Model)
+        {
+            <tr>
+                <th>@mus.MUSTERIID</th>
+                <td>@mus.MUSTERIAD</td>
+                <td>@mus.MUSTERISOYAD</td>
+                <td> <a href="/MUSTERI/SIL/@mus.MUSTERIID" class="btn btn-danger btn-sm" style="border-radius: 8px;">Sil</a> </td>
+                <td> <a href="/MUSTERI/MusteriGetir/@mus.MUSTERIID" class="btn btn-success btn-sm" style="border-radius: 8px;">Güncelle</a> </td>
+                <td>@Html.ActionLink("sil", "SIL", new { id = mus.MUSTERIID }, new { @class = "btn btn-warning", onclick = "if(!confirm('Gerçekten silmek istiyor musunuz?')){ return false; }" })</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+

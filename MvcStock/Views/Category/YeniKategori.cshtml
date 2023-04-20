@@ -1,0 +1,31 @@
+﻿@model MvcStock.Models.Entity.TBLKATEGORILER
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<body style="background-color: #F5EBEB">
+    <h4>
+        <svg xmlns="http://www.w3.org/2000/svg" style="height:10px; margin-right:10px" viewBox="0 0 512 512">
+            <path d="M459.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1
+          4.4L288 214.3V256v41.7L459.5 440.6zM256 352V256 128 96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192
+          160C4.2 237.5 0 246.5 0 256s4.2 18.5 11.5 24.6l192 160c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V352z" />
+        </svg><strong><a href="/Category/Index/" style="text-decoration:none;color:black">Kategoriler</a></strong>
+    </h4>
+    <div style="background-color:white; border-radius:2rem; padding-top:2rem; padding-left:3rem;">
+        <form class="form-group" method="post">
+            @* <div>
+                    <label>Kategory Adı</label>
+                    <input type="text" class="form-control" style="width: 40%" name="KATEGORIAD" />
+                </div>*@
+            <div>
+                <label>Kategori Adı</label>
+                @Html.TextBoxFor(m => m.KATEGORIAD, new { @class = "form-control", @style="width:40%" })
+                @Html.ValidationMessageFor(m => m.KATEGORIAD, " ", new { @style = "color:blue" })
+            </div>
+            <div style="margin-top:10px;">
+                <button class="btn btn-info btn-sm">Kaydet</button>
+            </div>
+        </form>
+    </div>
+</body>
+

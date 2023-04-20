@@ -1,0 +1,44 @@
+﻿@using MvcStock.Models.Entity
+@model List<TBLURUNLER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<a href="/URUN/YeniUrun/" class="btn btn-primary btn-sm" style="margin-bottom: 10px; border-radius: 8px; float:right;">Yeni Ekle</a>
+<h4 style="padding-bottom:1rem"><strong>Ürünler</strong></h4>
+<table id="tbl1" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Urün Id</th>
+            <th>Ürün Adı</th>
+            <th>Marka</th>
+            <th>Kategori</th>
+            <th>Fiyat</th>
+            <th>Stok</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var urn in Model)
+        {
+            <tr>
+                <th>@urn.URUNID</th>
+                <td>@urn.URUNAD</td>
+                <td>@urn.MARKA</td>
+                <td>@urn.TBLKATEGORILER.KATEGORIAD</td>
+                <td>@urn.FIYAT</td>
+                <td>@urn.STOK</td>
+                <td> <a href="/URUN/SIL/@urn.URUNID" class="btn btn-danger btn-sm" style="border-radius: 8px;">Sil</a> </td>
+                <td> <a href="/URUN/UrunGetir/@urn.URUNID" class="btn btn-success btn-sm" style="border-radius: 8px;">Güncelle</a> </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<link href="~/Content/DataTables/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $('#tbl1').DataTable();
+</script>

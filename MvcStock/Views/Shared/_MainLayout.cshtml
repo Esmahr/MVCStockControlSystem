@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #F5EBEB">
+
+    <nav class="navbar navbar-default" style="background-color:white;" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Mvc Stok</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/Category/Index/" style="margin-left:4rem">Kategoriler</a></li>
+                <li><a href="/Urun/Index/" style="margin-left:1rem">Ürünler</a></li>
+                <li><a href="/Musteri/Index/" style="margin-left:1rem">Müşteriler</a></li>
+                <li><a href="/Satis/Index/" style="margin-left:1rem">Satışlar</a></li>
+                <li><a href="/Yardim/Index/" style="margin-left:1rem">Yardım</a></li>
+            </ul>
+            <div style="float: right;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="height: 20px; margin-top: 10px; margin-right:15px;">
+                    <path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4
+                      416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="height: 25px; margin-top: 10px; margin-right:10px;">
+                    </i>">
+                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7
+                      512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                </svg>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="background-color:white; border-radius:2rem; padding:3rem;">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

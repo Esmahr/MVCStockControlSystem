@@ -1,0 +1,41 @@
+﻿@model MvcStock.Models.Entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<body style="background-color: #F5EBEB">
+    <h4>
+        <svg xmlns="http://www.w3.org/2000/svg" style="height:10px; margin-right:10px" viewBox="0 0 512 512">
+            <path d="M459.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1
+          4.4L288 214.3V256v41.7L459.5 440.6zM256 352V256 128 96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192
+          160C4.2 237.5 0 246.5 0 256s4.2 18.5 11.5 24.6l192 160c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V352z" />
+        </svg><strong><a href="/Musteri/Index/" style="text-decoration:none;color:black">Müşteriler</a></strong>
+    </h4>
+    <div style="background-color:white; border-radius:2rem; padding-top:2rem; padding-left:3rem;">
+
+        <form class="form-group" method="post">
+            <div>
+                <label>Müşteri Adı</label>
+                @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control", @style = "width: 40%" })
+                @Html.ValidationMessageFor(m => m.MUSTERIAD, " ", new { @style = "color:blue" })
+            </div>
+            <div style="margin-top:1rem;">
+                <label>Müşteri Soyadı</label>
+                @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control", @style = "width: 40%" })
+                @Html.ValidationMessageFor(m => m.MUSTERISOYAD, " ", new { @style = "color:blue" })
+            </div>
+            <div style="margin-top:10px;">
+                <button class="btn btn-info btn-sm" id="btn1">Kaydet</button>
+            </div>
+            <script>
+                $('#btn1').click(function () {
+                    alert('Müşteri ekleme işlemi başarılı..');
+                });
+            </script>
+        </form>
+    </div>
+</body>
+
